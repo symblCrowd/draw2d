@@ -1,12 +1,12 @@
 {
   "name": "@symblcrowd/sc-draw2d-core",
-  "version": "1.0.0",
+  "version": "1.0.7",
   "description": "JS drag&drop lib",
-  "main": "draw2d.js",
+  "main": "dist/draw2d.js",
   "scripts": {
     "build": "webpack --env dev && webpack --env build",
     "watch": "webpack --progress --watch --env dev",
-    "publish": "npm run build && cd dist && npm publish && cd ../"
+    "publish-npm": "npm run build && npm publish"
   },
   "repository": {
     "type": "git",
@@ -48,7 +48,6 @@
   },
   "dependencies": {
     "canvg-browser": "1.0.0",
-    "copy-webpack-plugin": "^12.0.2",
     "shifty": "2.20.0"
   }
 }

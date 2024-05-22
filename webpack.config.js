@@ -1,6 +1,5 @@
 /* global __dirname, require, module*/
 const TerserPlugin = require("terser-webpack-plugin");
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 const config = {
@@ -15,7 +14,10 @@ const config = {
     //libraryTarget: 'umd', // make the bundle export
     path: __dirname + '/dist',
     filename: 'draw2d.js',
-    library: 'draw2d'
+    library: 'draw2d',
+    libraryTarget: 'umd',
+    umdNamedDefine: true,
+    globalObject: `(typeof self !== 'undefined' ? self : this)`
   },
   module: {
     rules: [
@@ -37,17 +39,11 @@ const config = {
       }
     ]
   },
-  // resolve: {
-  //   modules: [path.resolve('./node_modules'), path.resolve('./src')],
-  //   extensions: ['.json', '.js', '.css']
-  // },
-  plugins: [
-    new CopyWebpackPlugin({
-      patterns: [
-        { from: 'package.json', to: './' }
-      ],
-    }),
-  ]
+  resolve: {
+    modules: [path.resolve('./node_modules'), path.resolve('./src')],
+    extensions: ['.json', '.js', '.css']
+  },
+  plugins: []
 };
 
 module.exports = config;
