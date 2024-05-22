@@ -2,7 +2,7 @@
   "name": "@symblcrowd/sc-draw2d-core",
   "version": "1.0.0",
   "description": "JS drag&drop lib",
-  "main": "dist/draw2d.js",
+  "main": "draw2d.js",
   "scripts": {
     "build": "webpack --env dev && webpack --env build",
     "watch": "webpack --progress --watch --env dev",
