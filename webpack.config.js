@@ -1,5 +1,6 @@
 /* global __dirname, require, module*/
 const TerserPlugin = require("terser-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 const config = {
@@ -36,11 +37,17 @@ const config = {
       }
     ]
   },
-  resolve: {
-    modules: [path.resolve('./node_modules'), path.resolve('./src')],
-    extensions: ['.json', '.js', '.css']
-  },
-  plugins: [ ]
+  // resolve: {
+  //   modules: [path.resolve('./node_modules'), path.resolve('./src')],
+  //   extensions: ['.json', '.js', '.css']
+  // },
+  plugins: [
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'package.json', to: './' }
+      ],
+    }),
+  ]
 };
 
 module.exports = config;
