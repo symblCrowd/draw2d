@@ -1,0 +1,1 @@
+declare module '@symblcrowd/sc-draw2d-core'
