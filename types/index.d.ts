@@ -1,4 +1,4 @@
 declare module '@symblcrowd/sc-draw2d-core' {
-  const content: any;
-  export = content;
+  const draw2d: any;
+  export = draw2d;
 }
