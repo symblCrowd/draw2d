@@ -1,6 +1,6 @@
 {
   "name": "@symblcrowd/sc-draw2d-core",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "JS drag&drop lib",
   "main": "dist/draw2d.js",
   "types": "types/index.d.ts",
